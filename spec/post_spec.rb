@@ -11,7 +11,7 @@ describe Post do
 			Post.create( 	email: 'nic@pell.com', 
 										name: 'Nic',
 										user_name: '@nic',
-										post: 'This is the most creative post ever')
+										post: 'BEST POST EVER')
 			expect(Post.count).to eq(1)
 
 			post = Post.first
@@ -19,7 +19,7 @@ describe Post do
 			expect(post.email).to eq('nic@pell.com')
 			expect(post.name).to eq('Nic')
 			expect(post.user_name).to eq('@nic')
-			expect(post.post).to eq('This is the most creative post ever')
+			expect(post.post).to eq('BEST POST EVER')
 
 			post.destroy
 

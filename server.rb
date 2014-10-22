@@ -12,3 +12,8 @@ DataMapper.finalize
 DataMapper.auto_upgrade!
 
 set :views, Proc.new { File.join(root, "views") }
+
+get '/' do
+	@posts = Post.all
+	erb :index
+end

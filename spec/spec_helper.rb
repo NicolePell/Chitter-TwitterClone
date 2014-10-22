@@ -1,10 +1,12 @@
+
+
 require 'database_cleaner'
 require 'capybara/rspec'
 require './server'
 
-Capybara.app = Sinatra::Application.new
-
 ENV["RACK_ENV"] = 'test'
+
+Capybara.app = Sinatra::Application.new
 
 RSpec.configure do |config|
 	config.expect_with :rspec do |expectations|
