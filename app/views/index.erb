@@ -1,0 +1,15 @@
+<div id="new-post">
+	<form action="/posts" method="post">
+		Post: <input type="text" name="post">
+		User name: <input type="text" name="user_name">
+		<input type="submit" value="Post">
+	</form>
+</div>
+
+<ul>
+	<% @posts.each do |post| %>
+	<li>
+		<%= post.post %><%=post.user_name %>
+	</li>
+	<% end %>
+</ul>
