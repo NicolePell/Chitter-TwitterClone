@@ -8,7 +8,7 @@ class User
 	attr_accessor :password_confirmation
 
 	property :id, Serial
-	property :email, String, unique: true, message: "This email is already taken"
+	property :email, String, unique: true, message: "This email is already registered"
 	property :user_name, String, unique: true, message: "This username is already taken"
 	property :password_digest, Text
 
