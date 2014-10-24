@@ -5,6 +5,9 @@ require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
 require './lib/post'
 require './lib/user'
+require_relative 'helpers/session'
+
+include SessionHelpers
 
 set :views, Proc.new { File.join(root, "views") }
 enable :sessions
@@ -20,7 +23,7 @@ post '/posts' do
 	post = params["post"]
 	user_name = params["user_name"]
 	Post.create(post: post, user_name: user_name)
-	redirect to ('/')
+	redirect to('/')
 end
 
 get '/users/new' do
@@ -57,6 +60,13 @@ post '/sessions' do
 		flash[:errors] = ["The email or password you entered is incorrect"]
 		erb :"sessions/new"
 	end
+end
+
+delete '/sessions' do
+	flash[:notice] = "Goodbye!"
+	session[:user_id] = nil
+
+	redirect to('/')
 end
 
 
