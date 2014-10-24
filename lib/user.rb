@@ -8,11 +8,11 @@ class User
 	attr_accessor :password_confirmation
 
 	property :id, Serial
-	property :email, String 
-	property :user_name, String
+	property :email, String, unique: true, message: "This email is already taken"
+	property :user_name, String, unique: true, message: "This username is already taken"
 	property :password_digest, Text
 
-	validates_confirmation_of :password
+	validates_confirmation_of :password, message: "Sorry, your passwords don't match"
 
 	def password=(password)
 		@password = password

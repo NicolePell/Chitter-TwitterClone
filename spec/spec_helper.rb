@@ -1,5 +1,3 @@
-
-
 require 'database_cleaner'
 require 'capybara/rspec'
 require './app/server'
