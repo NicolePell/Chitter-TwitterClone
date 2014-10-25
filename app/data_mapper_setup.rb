@@ -1,6 +1,6 @@
 require 'data_mapper'
-require './lib/post'
-require './lib/user'
+require_relative 'models/post'
+require_relative 'models/user'
 
 
 env = ENV["RACK_ENV"] || "development"
