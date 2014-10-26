@@ -10,6 +10,7 @@ post '/users' do
 											password_confirmation: params[:password_confirmation])
 	if @user.save
 		session[:user_id] = @user.id
+		session[:user_name] = @user.user_name
 		redirect to('/')
 	else
 		flash.now[:errors] = @user.errors.full_messages

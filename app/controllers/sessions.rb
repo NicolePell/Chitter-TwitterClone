@@ -4,7 +4,7 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-	email, password = params[:email], params[:password]
+	email, password, user_name = params[:email], params[:password], params[:user_name]
 	@user = User.authenticate(email, password)
 	if @user
 		session[:user_id] = @user.id

@@ -6,7 +6,7 @@ end
 
 post '/posts' do
 	post = params["post"]
-	# user = 
-	Post.create(post: post)
+	user_name = session[:user_name]
+	Post.create(post: post, user_name: user_name)
 	redirect to('/')
 end

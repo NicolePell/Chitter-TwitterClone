@@ -23,13 +23,17 @@ h1 {
 
 }
 
+.signing {
+	text-align: right;
+}
+
 .posts {
 	text-align: center;
 
 }
 
 .new_post {
-	text-align: center;
+	text-align: right;
 }
 
 a.button {
