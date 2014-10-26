@@ -4,8 +4,11 @@ feature "User browses the list of posts" do
 	
 	before(:each) {
 		
-		Post.create( 	user_name: '@nic',
-									post: 'BEST POST EVER')
+		Post.create( 	post: 'BEST POST EVER')
+		User.create( 	email: "nic@pell.com",
+								user_name: "@nic",
+								password: "fairytail",
+								password_confirmation: "fairytail")
 	}
 
 	scenario "When visiting the homepage" do
@@ -13,4 +16,9 @@ feature "User browses the list of posts" do
 		expect(page.status_code).to eq 200
 		expect(page).to have_content('BEST POST EVER')
 	end
+
+	# scenario 'a post should display with a user name' do
+	# 	visit '/'
+	# 	expect(page).to have_content('@nic')
+	# end
 end

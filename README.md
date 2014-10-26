@@ -14,7 +14,7 @@ Notes:
 - [x] Secure passwords with bcrypt
 - [x] Use datamapper and postgres to save data
 - [x] Can see posts when not logged in
-- [ ] Can only post when logged in
+- [x] Can only post when logged in
 - [ ] Can reply to posts from other users
 
 Languages, Progams used:

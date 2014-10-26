@@ -1,16 +1,21 @@
-
-
-<div id="new-post">
-	<form action="/posts" method="post">
-		Post: <input type="text" name="post">
-		<input type="submit" value="Post">
-	</form>
-</div>
-
-<ul>
-	<% @posts.reverse.each do |post| %>
-	<li>
-		<%= post.post %><%=post.user_name %>
-	</li>
+<section class="new-post">
+	<% if current_user %>
+		<form action="/posts" method="post">
+			Say something: <input type="text" name="post">
+			<input type="submit" value="Post">
+		</form>
 	<% end %>
-</ul>
+</section>
+
+
+<div class="posts">
+	<ul>
+		<% @posts.reverse.each do |post| %>
+		<li>
+			<%= post.post %> <%= post.user_name %>
+		</li>
+		<% end %>
+	</ul>
+
+	
+</div>

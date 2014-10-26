@@ -7,18 +7,10 @@ describe Post do
 
 		it 'should be created and retrieved from the database' do
 			expect(Post.count).to eq(0)
-
-			Post.create( 	email: 'nic@pell.com', 
-										name: 'Nic',
-										user_name: '@nic',
-										post: 'BEST POST EVER')
+			Post.create( post: 'BEST POST EVER')
 			expect(Post.count).to eq(1)
-
 			post = Post.first
 
-			expect(post.email).to eq('nic@pell.com')
-			expect(post.name).to eq('Nic')
-			expect(post.user_name).to eq('@nic')
 			expect(post.post).to eq('BEST POST EVER')
 
 			post.destroy

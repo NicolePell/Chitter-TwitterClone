@@ -1,11 +1,12 @@
 get '/' do
 	@posts = Post.all
+
 	erb :index
 end
 
 post '/posts' do
 	post = params["post"]
-	user_name = params["user_name"]
-	Post.create(post: post, user_name: user_name)
+	# user = 
+	Post.create(post: post)
 	redirect to('/')
 end
