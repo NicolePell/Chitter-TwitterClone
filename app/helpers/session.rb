@@ -19,4 +19,12 @@ module SessionHelpers
 		fill_in 'password', with: password
 		click_button 'Sign in'
 	end
+
+	def add_post(post)
+			visit '/'
+			sign_in('nic@pell.com', 'fairytail')
+			fill_in 'post', with: 'AN EVEN BETTER POST THAN THE BEST POST'
+			click_button 'Post'
+	end
+
 end
