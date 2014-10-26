@@ -20,6 +20,10 @@ feature "User adds a new post" do
 		
 	end
 
-	
+	scenario "when logged out user cannot post" do
+		sign_in("nic@pell.com", "fairytail")
+		click_button 'Sign out'
+		expect(page).not_to have_content('post')
+	end
 
 end
